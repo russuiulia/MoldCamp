@@ -1,11 +1,17 @@
-.delete-form{
+.delete-form {
     display: inline;
 }
-.btn-none{
-    border:none;
+
+.btn-none {
+    border: none;
     background: transparent;
 
 }
-.btn-none:hover{
-text-decoration: underline;
+
+.btn-none:hover {
+    text-decoration: underline;
+}
+
+#main-jumbotron {
+    background: linear-gradient(185deg, rgba(233, 236, 239, 1) 0%, rgba(233, 236, 239, 1) 76%, rgba(255, 0, 0, 1) 83%, rgba(254, 255, 0, 1) 89%, rgba(255, 251, 0, 1) 91%, rgba(0, 66, 255, 1) 99%);
 }
