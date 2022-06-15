@@ -1,0 +1,11 @@
+.delete-form{
+    display: inline;
+}
+.btn-none{
+    border:none;
+    background: transparent;
+
+}
+.btn-none:hover{
+text-decoration: underline;
+}

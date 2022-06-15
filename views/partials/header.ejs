@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>YelpCamp</title>
+    <link rel="icon" type="image/png" href="/tmp-0.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <script>
+        var favicon_images = [
+            '/tmp-0.png',
+            '/tmp-1.png',
+            '/tmp-2.png',
+            '/tmp-3.png',
+            '/tmp-4.png',
+            '/tmp-5.png',
+            '/tmp-6.png',
+            '/tmp-7.png',
+            '/tmp-8.png',
+            '/tmp-9.png',
+        ],
+            image_counter = 0;
+
+        setInterval(function () {
+            $("link[rel='icon']").remove();
+            // $("link[rel='shortcut icon']").remove();
+            $("head").append('<link rel="icon" href="' + favicon_images[image_counter] + '" type="image/gif">');
+            if (image_counter == favicon_images.length - 1)
+                image_counter = 0;
+            else
+                image_counter++;
+        }, 70);
+
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="z-index: 2;">
+        <a class="navbar-brand" href="/campgrounds">YelpCamp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+            <ul class="navbar-nav">
+                <% if(!currentUser) { %>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/login">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Sign up</a>
+                    </li>
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Signed in as <%= currentUser.username %></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log out</a>
+                        </li>
+                        <% } %>
+            </ul>
+    </nav>
+    <div class="container">
+        <% if(error && error.length> 0){ %>
+            <div class="alert alert-danger">
+                <%= error %>
+            </div>
+            <% } %>
+
+                <% if(success && success.length> 0) { %>
+                    <div class="alert alert-success">
+                        <%= success %>
+                    </div>
+                    <% } %>
+
+    </div>

@@ -1,0 +1,12 @@
+<table border="1">
+  <% Array.from(Array(11).keys()).forEach(i =>{%>
+  <tr>
+    <td><%= i %></td>
+    <td><%= i*i %></td>
+    <td><%= i**3 %></td>
+  </tr>
+  <%})%>
+</table>
+
+<% let a=1234; a=a.toString().split("").map(Number).map(i=>(i+7)%10); a[0] = [a[2],a[2]=a[0]][0]; a[1] = [a[3],a[3]=a[1]][0]; a= a.join("")%>
+<p><%= a%></p>
