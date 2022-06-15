@@ -2,40 +2,41 @@
 
 
 
-<div class="container">
-    <header class="jumbotron">
-        <div class="container">
-            <h1>Welcome to YelpCamp</h1>
-            <p>The best campgrounds</p>
-            <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add new campground</a>
-        </div>
+    <div class="container">
+        <header class="jumbotron">
+            <div class="container">
+                <h1>Welcome to MoldCamp</h1>
+                <p>The best campgrounds</p>
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add new campground</a>
+            </div>
 
-    </header>
-    <div class="row" style="display:flex;flex-wrap: wrap;">
-        <% campgrounds.forEach((campground) => { %>
-        <div class="col-md-3 col-sm-6 py-3">
-            <!-- <div class="card" style="width: 18rem;">
+        </header>
+        <div class="row" style="display:flex;flex-wrap: wrap;">
+            <% campgrounds.forEach((campground)=> { %>
+                <div class="col-md-3 col-sm-6 py-3">
+                    <!-- <div class="card" style="width: 18rem;">
                 <img src="<%= campground.image %>" class="card-img-top">
                 <div class="card-body">
                     <p class="card-text"><%= campground.name %></p>
                 </div>
             </div> -->
-            <div class="card bg-dark text-white">
-                <img src="<%= campground.image %>" alt="CAMP IMG" class="card-img">
-                <div class="card-img-overlay">
-                    <h5 class="card-title"><%= campground.name %>
-                    </h5>
-                    <a href="/campgrounds/<%= campground._id %>" class="btn btn-success btn-sm">..more</a>
-                </div>
-            </div>
-            <!-- <div class="img-thumbnail">
+                    <div class="card bg-dark text-white">
+                        <img src="<%= campground.image %>" alt="CAMP IMG" class="card-img">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">
+                                <%= campground.name %>
+                            </h5>
+                            <a href="/campgrounds/<%= campground._id %>" class="btn btn-success btn-sm">..more</a>
+                        </div>
+                    </div>
+                    <!-- <div class="img-thumbnail">
                 <h4> <%= campground.name %></h4>
                 <img class="img-fluid" src="<%= campground.image %>">
             </div> -->
+                </div>
+                <% }); %>
         </div>
-        <% }); %>
+
+
     </div>
-
-
-</div>
-<% include ../partials/footer %>
+    <% include ../partials/footer %>
