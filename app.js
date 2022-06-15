@@ -15,7 +15,7 @@ const campgroundRoutes = require('./routes/campgrounds')
 const commentRoutes = require('./routes/comments')
 const indexRoutes = require('./routes/index')
 
-mongoose.connect(process.env.DATABASE_URI, { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASE_URI, { useMongoClient: true });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
