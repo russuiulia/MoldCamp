@@ -7,6 +7,7 @@ const User = require('./models/user');
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const seedDB = require("./seeds");
+require('dotenv').config()
 const app = express();
 const port = process.env.PORT || 3200;
 
