@@ -57,3 +57,4 @@ app.get('/aa', (req, res) => {
 app.listen(port, function () {
   console.log(`Listening on ${port}`);
 });
+module.exports = app;
